@@ -1,0 +1,50 @@
+chrome.sidePanel 
+
+bookmark_border
+chrome.sidePanel API を使用すると、ウェブページのメイン コンテンツとともにブラウザのサイドパネルでコンテンツをホストできます。
+
+権限
+sidePanel
+Side Panel API を使用するには、拡張機能のマニフェスト ファイルに "sidePanel" 権限を追加します。
+
+manifest.json:
+
+
+{
+  "name": "My side panel extension",
+  ...
+  "permissions": [
+    "sidePanel"
+  ]
+}
+可用性
+Chrome 114 以降 MV3 以降 をご覧ください。
+コンセプトと使用方法
+Side Panel API を使用すると、拡張機能でサイドパネルに独自の UI を表示できるようになり、ユーザーのブラウジング ジャーニーを補完する永続的なエクスペリエンスを実現できます。
+
+<ph type="x-smartling-placeholder">
+</ph>サイドパネルのプルダウン メニュー<ph type="x-smartling-placeholder">
+</ph> Chrome ブラウザのサイドパネル UI。
+次のような機能があります。
+
+タブ間を移動しても、サイドパネルは開いたままになります（開いている場合）。
+特定のウェブサイトでのみ使用できます。
+拡張機能ページの場合、サイドパネルからすべての Chrome API にアクセスできます。
+Chrome の設定で、パネルを表示する側を指定できます。
+ユースケース
+以下のセクションでは、Side Panel API の一般的なユースケースについて説明します。拡張機能の完全な例については、拡張機能のサンプルをご覧ください。
+
+すべてのサイトで同じサイドパネルを表示する
+すべてのサイトで同じサイドパネルが表示されるように、マニフェストの "side_panel" キーの "default_path" プロパティからサイドパネルを初期設定できます。拡張機能ディレクトリ内の相対パスを指します。
+
+manifest.json:
+
+
+{
+  "name": "My side panel extension",
+  ...
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  }
+  ...
+}
