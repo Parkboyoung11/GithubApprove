@@ -5,7 +5,7 @@
   "description": "ファイル変更ページの外側にApproveボタンを追加する",
   "content_scripts": [
     {
-      "matches": ["https://github.com/*"],
+      "matches": ["https://github.com/*/*/pull/*/files"],
       "js": ["content.js"]
     }
   ]
